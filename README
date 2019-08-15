@@ -1,0 +1,10 @@
+CLI-tools - join
+================
+
+* Building
+
+    CC=musl-gcc make
+
+* Installing
+
+    make install
