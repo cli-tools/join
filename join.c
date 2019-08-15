@@ -25,16 +25,16 @@ main(int argc, char **argv)
         sep = optarg;
         break;
       case 'h':
-        printf("Usage: join [OPTION]...\n"
-               "Join line records together on a single line delimited by spaces.\n"
-               "\n"
-               "   -d DELIMITER          use DELIMITER string as output record delimiter\n"
-               "   -n                    do not output the trailing newline\n"
-               "   -r                    ignore empty line records from input\n"
-               "\n"
-               "join source code: <https://github.com/cli-tools/join/>\n"
-               "join community: <https://gitter.im/cli-tools/community>\n"
-               );
+        puts("Usage: join [OPTION]...\n"
+             "Join line records together on a single line delimited by spaces.\n"
+             "\n"
+             "   -d DELIMITER          use DELIMITER string as output record delimiter\n"
+             "   -n                    do not output the trailing newline\n"
+             "   -r                    ignore empty line records from input\n"
+             "\n"
+             "join source code: <https://github.com/cli-tools/join/>\n"
+             "join community: <https://gitter.im/cli-tools/community>\n"
+             );
         exit(EXIT_SUCCESS);
         break;
       case 'n':
