@@ -10,6 +10,16 @@ extern int optind, opterr, optopt;
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
 ssize_t getdelim(char **lineptr, size_t *n, int delim, FILE *stream);
 
+size_t
+chomp(char * str)
+{
+  /* Credit: https://stackoverflow.com/a/28462221/3504575 */
+  size_t ofs = strcspn(str, "\r\n");
+  str[ofs] = 0;
+  return ofs;
+}
+
+
 int
 main(int argc, char **argv)
 {
@@ -56,9 +66,8 @@ main(int argc, char **argv)
     if (getline(&record, &n, stdin) < 0) {
       break;
     }
-    /* Credit: https://stackoverflow.com/a/28462221/3504575 */
-    record[strcspn(record, "\r\n")] = 0;
-    if (truncate_empty_records && strlen(record) == 0) {
+    n = chomp(record);
+    if (truncate_empty_records && n == 0) {
       free(record);
       continue;
     }
