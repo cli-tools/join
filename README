@@ -1,6 +1,8 @@
 CLI-tools - join
 ================
 
+Join line records together on a single line delimited by spaces.
+
 * Building
 
     CC=musl-gcc make
@@ -8,3 +10,7 @@ CLI-tools - join
 * Installing
 
     make install
+
+* CLI-tools community
+
+    https://gitter.im/cli-tools/community

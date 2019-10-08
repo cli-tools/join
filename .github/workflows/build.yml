@@ -1,0 +1,13 @@
+name: Build static binary
+
+on: push
+
+jobs:
+  build:
+    name: Build job
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+      - run: apt-get update
+      - run: apt-get install -y musl-tools make
+      - run: CC=musl-gcc make
